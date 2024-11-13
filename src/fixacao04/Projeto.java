@@ -9,7 +9,6 @@ public class Projeto {
     private int qtdTarefa;
     private int qtdMaxTarefa;
     private double horaDeTrabalho;
-    private boolean finalizado = false;
 
     public Projeto(String nome, String nomeCliente, double horaDeTrabalho,int qtdMaxTarefa){
         this.nome = nome;
@@ -66,14 +65,37 @@ public class Projeto {
         this.qtdMaxTarefa = qtdMaxTarefa;
     }
 
-    public void addTarefas(String descricao) {
+    public void addTarefa(String descricao) {
         this.tarefas.add(new Tarefa(descricao));
         qtdTarefa = tarefas.size();
     }
 
-    public void addTarefas(String descricao,String executor,int tempoGasto, boolean finalizada) {
-        this.tarefas.add(new Tarefa(descricao,executor,tempoGasto,finalizada));
+    public void addTarefa(String descricao,String executor,int tempoGasto, Status status) {
+        this.tarefas.add(new Tarefa(descricao,tempoGasto,executor,status));
         qtdTarefa = tarefas.size();
+    }
+
+    public void addTarefa(String descricao,String executor) {
+        this.tarefas.add(new Tarefa(descricao,0,executor,Status.DELEGADA));
+        qtdTarefa = tarefas.size();
+    }
+
+    public boolean isFinalizado() {
+        boolean finalizado = true;
+        for (Tarefa tarefa : this.tarefas) {
+            if (tarefa.getStatus() != Status.FINALIZADA) {
+                finalizado = false;
+            }
+        }
+        return finalizado;
+    }
+
+    public double getValorTotal(){
+        double valorTotal = 0;
+        for(Tarefa tarefa : this.tarefas){
+            valorTotal += (tarefa.getHorasGastas()*this.getHoraDeTrabalho());
+        }
+        return valorTotal;
     }
 
 

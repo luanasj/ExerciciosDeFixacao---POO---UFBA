@@ -1,6 +1,4 @@
-import fixacao04.Projeto;
-import fixacao04.Status;
-import fixacao04.Tarefa;
+package fixacao04;
 
 import java.util.LinkedList;
 
