@@ -1,42 +1,55 @@
 package fixacao05;
 
 public class AutomovelBasico extends Automovel {
-    private boolean quinta Marcha;
+    private boolean quintaMarcha;
     private boolean limpadorDoVidroTraseiro;
-    private boolean multmidia;
+    private boolean multimidia;
 
-    public AutomovelBasico (String m, String c, byte comb, boolean qm, boolean lvt, boolean m){
+    public AutomovelBasico(String m, String c, byte comb, boolean qm, boolean lvt, boolean multi){
         super(m,c,comb);
         this.quintaMarcha= qm;
-        this.limpadorVidroTraseiro=lvt;
-        this.multmidia= m ;
+        this.limpadorDoVidroTraseiro=lvt;
+        this.multimidia= multi ;
     }
 
-    public AutomovelBasico (String m, String c, byte comb) {
+    public AutomovelBasico(String m, String c, byte comb) {
         super(m,c,comb);
         this.quintaMarcha = true;
-        this.limpadorVidroTraseiro =true;;
-        this.multmidia =true;
+        this.limpadorDoVidroTraseiro =true;;
+        this.multimidia =true;
+    }
+
+
+    public boolean isQuintaMarcha() {
+        return quintaMarcha;
+    }
+
+    public boolean isLimpadorDoVidroTraseiro() {
+        return limpadorDoVidroTraseiro;
+    }
+
+    public boolean isMultimidia() {
+        return multimidia;
     }
 
     public float quantoCusta(){
         float preco = super.quantoCusta();
-        if (getQuintaMarcha())
+        if (isQuintaMarcha())
         preco = preco + 2800;
-        if (getLimpadorDoVidroTraseiro())
+        if (isLimpadorDoVidroTraseiro())
         preco = preco + 650;
-        if (getMultimidia() )
+        if (isMultimidia())
         preco = preco +3000;
         return preco;
     }
     public String toString(){
         String resultado = super.toString();
-        if (getQuintaMarcha() == true)
+        if (isQuintaMarcha())
         resultado += "Com cinco marchas \n";
-        if (getLimpadorDoVidroTraseiro() == true)
+        if (isLimpadorDoVidroTraseiro())
         resultado += "Com limpador traseiro \n";
-        if (getMultimida() == true)
-        resultado += "Com \kit multmidia \n";
+        if (isMultimidia() )
+        resultado += "Com kit multmidia \n";
         return resultado;
     }
 }

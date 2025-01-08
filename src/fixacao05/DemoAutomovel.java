@@ -7,8 +7,7 @@ public class DemoAutomovel {
         System.out.println(a.quantoCusta());
         System.out.println(a.quantasPrestacoes());
 
-        AutomovelBasico ab = new AutomovelBasico("Corsa","cinza",
-        Automovel.movidoAGasolina,true,true,false);
+        AutomovelBasico ab = new AutomovelBasico("Corsa","cinza", Automovel.movidoAGasolina,true,true,false);
         System.out.println(ab.toString());
         System.out.println(ab.quantoCusta());
         System.out.println(ab.quantasPrestacoes());

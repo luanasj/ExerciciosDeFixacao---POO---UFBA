@@ -2,9 +2,9 @@ package fixacao05;
 
 public class Automovel {
     
-    public static final int movidoAGasolina = 1;
-    public static final int movidoAAlcool = 2;
-    public static final int movidoADiesel = 3;
+    public static final byte movidoAGasolina = 1;
+    public static final byte movidoAAlcool = 2;
+    public static final byte movidoADiesel = 3;
     private static final int numeroMaximoDePrestacoes = 24;
 
     private String modelo;
