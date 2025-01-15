@@ -11,5 +11,10 @@ public class DemoAutomovel {
         System.out.println(ab.toString());
         System.out.println(ab.quantoCusta());
         System.out.println(ab.quantasPrestacoes());
+
+        AutomovelBasico abc = new AutomovelLuxo("Corsa","cinza", Automovel.movidoAGasolina,true,true,false,false,true,true);
+        System.out.println(ab.toString());
+        System.out.println(ab.quantoCusta());
+        System.out.println(ab.quantasPrestacoes());
     }
 }

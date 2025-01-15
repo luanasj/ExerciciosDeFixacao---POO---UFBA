@@ -5,7 +5,7 @@ public class Automovel {
     public static final byte movidoAGasolina = 1;
     public static final byte movidoAAlcool = 2;
     public static final byte movidoADiesel = 3;
-    private static final int numeroMaximoDePrestacoes = 24;
+    protected static final int numeroMaximoDePrestacoes = 24;
 
     private String modelo;
     private String cor;
@@ -38,7 +38,7 @@ public class Automovel {
         switch (getCombustivel()){
             case movidoAGasolina: preco = 12000; break;
             case movidoAAlcool: preco = 10500; break;
-            case movidoADiesel: preco = 11000; ;
+            case movidoADiesel: preco = 11000;
         }
         return preco;
     }

@@ -1,9 +1,9 @@
 package fixacao05;
 
 public class AutomovelBasico extends Automovel {
-    private boolean quintaMarcha;
-    private boolean limpadorDoVidroTraseiro;
-    private boolean multimidia;
+    protected boolean quintaMarcha;
+    protected boolean limpadorDoVidroTraseiro;
+    protected boolean multimidia;
 
     public AutomovelBasico(String m, String c, byte comb, boolean qm, boolean lvt, boolean multi){
         super(m,c,comb);
