@@ -34,13 +34,25 @@ import java.util.LinkedList;
         return titulo.toString();
     }
 
-    public String emitirNotaFiscal(Titulo titulo){
+    public String emitirNotaFiscal(Titulo titulo, boolean cartaoVIP){
         String notaFiscal = "NOTA FISCAL \n\n";
 
-        notaFiscal += "Livraria " + Livraria.getNome() + "\n\n Produtos: \n\n 1 " + titulo.getNome() + " - " +  titulo.getPrecoFinal() + "\n\n Preço Total: " + titulo.getPrecoFinal();
+        double price = titulo.getPrecoFinal();
+
+        if(cartaoVIP){
+            if(titulo instanceof Livro) price += titulo.getPrecoFinal() * 0.03;
+            else if(titulo instanceof Revista) price += titulo.getPrecoFinal() * 0.02;
+            else if( ((Livro) titulo) instanceof LivroDidatico) price += titulo.getPrecoFinal() * 0.1;
+        }
+
+        notaFiscal += "Livraria " + Livraria.getNome() + "\n\n Produtos: \n\n 1 " + titulo.getNome() + " - " +  titulo.getPrecoFinal() + "\n\n Preço Total: " + price;
 
         return notaFiscal;
     }
+
+
+
+
 
 
 

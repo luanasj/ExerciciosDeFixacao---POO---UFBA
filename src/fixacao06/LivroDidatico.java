@@ -1,6 +1,6 @@
 package fixacao06;
 
-public class LivroDidatico extends Livro{
+public class LivroDidatico extends Livro {
     private final String area;
 
     public LivroDidatico(String nome, String editora, double preco,String autorPrincipal,String resumo, String area){
