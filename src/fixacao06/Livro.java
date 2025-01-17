@@ -1,15 +1,36 @@
 package fixacao06;
 
 public class Livro extends Titulo{
-    protected String autorPrincipal;
-    protected String editora;
+
+    protected final String autorPrincipal;
     protected String resumo;
 
-    public Livro(String nome, double preco,String autorPrincipal,String editora,String resumo){
-        super(nome,preco,0.5);
+    public Livro(String nome, String editora, double preco,String autorPrincipal,String resumo){
+        super(nome,editora,preco,0.5);
         this.autorPrincipal = autorPrincipal;
-        this.editora = editora;
         this.resumo = resumo;
+    }
+
+    protected Livro(String nome, String editora, double preco, double ISS ,String autorPrincipal,String resumo){
+        super(nome,editora,preco,ISS);
+        this.autorPrincipal = autorPrincipal;
+        this.resumo = resumo;
+    }
+
+    public String getAutorPrincipal() {
+        return this.autorPrincipal;
+    }
+
+
+    public String getResumo() {
+        return this.resumo;
+    }
+
+    @Override
+    public String toString() {
+        String detalhes = super.toString();
+        detalhes = "Autor Principal: " + getAutorPrincipal() + ";\n" + ";\n" + "Resumo: " + getResumo() + ";\n";
+        return detalhes;
     }
 
 
