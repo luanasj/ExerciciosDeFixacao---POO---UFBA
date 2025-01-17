@@ -29,7 +29,7 @@ public class Livro extends Titulo{
     @Override
     public String toString() {
         String detalhes = super.toString();
-        detalhes = "Autor Principal: " + getAutorPrincipal() + ";\n" + ";\n" + "Resumo: " + getResumo() + ";\n";
+        detalhes += "Autor Principal: " + getAutorPrincipal() + "\nResumo: " + getResumo();
         return detalhes;
     }
 

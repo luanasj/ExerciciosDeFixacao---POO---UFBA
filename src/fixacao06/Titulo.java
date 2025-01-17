@@ -35,7 +35,7 @@ public abstract class Titulo {
 
     public String toString(){
         String detalhes;
-        detalhes = "Nome: " + getNome() + "\n Editora: " + getEditora() +";\n Preço: " + getPreco() + ";\n";
+        detalhes = "Nome: " + getNome() + "\nEditora: " + getEditora() +"\nPreço: " + getPreco() + "\n";
         return detalhes;
     }
 }

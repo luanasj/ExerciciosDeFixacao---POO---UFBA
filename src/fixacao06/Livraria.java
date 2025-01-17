@@ -34,7 +34,7 @@ import java.util.LinkedList;
         return titulo.toString();
     }
 
-    public String emitirNotaFiscal(Titulo titulo, boolean cartaoVIP){
+    public static String emitirNotaFiscal(Titulo titulo, boolean cartaoVIP){
         String notaFiscal = "NOTA FISCAL \n\n";
 
         double price = titulo.getPrecoFinal();
@@ -45,7 +45,7 @@ import java.util.LinkedList;
             else if( ((Livro) titulo) instanceof LivroDidatico) price += titulo.getPrecoFinal() * 0.1;
         }
 
-        notaFiscal += "Livraria " + Livraria.getNome() + "\n\n Produtos: \n\n 1 " + titulo.getNome() + " - " +  titulo.getPrecoFinal() + "\n\n Preço Total: " + price;
+        notaFiscal += "Livraria " + Livraria.getNome() + "\n\nProdutos: \n\n 1 " + titulo.getNome() + " - " +  titulo.getPrecoFinal() + "\n\nPreço Total: " + price;
 
         return notaFiscal;
     }
