@@ -1,4 +1,4 @@
-package fixacao08;
+package fixacao08.Contas;
 
 public class ContaPoupanca extends Conta {
     private float taxaDeRendimento;
